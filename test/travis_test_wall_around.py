@@ -22,10 +22,10 @@ class WallAround(unittest.TestCase):
         self.assertTrue(left > right, "can't curve to right")
 
         left, right = self.set_and_get(0, 5, 1000, 0) #side direction is not a trigger of stop
-        self.assertTrue(left == right != 0, "stop wrongly by sode sensors")
+        self.assertTrue(left < right != 0, "don't curve to left")
 
         left, right = self.set_and_get(0, 10, 0, 0) #curve to left
-        self.assertTrue(left > right, "can't curve to right")
+        self.assertTrue(left > right, "don't curve to right")
 
         left, right = self.set_and_get(0, 200, 0, 0) #curve to right
         self.assertTrue(left > right, "don't curve to right")
