@@ -30,9 +30,6 @@ class WallAround(unittest.TestCase):
         left, right = self.set_and_get(0, 200, 0, 0) #curve to right
         self.assertTrue(left > right, "don't curve to right")
 
-        left, right = self.set_and_get(0, 1000, 1000, 0) #side direction is not a trigger of stop
-        self.assertTrue(left < right, "don't curve to left")
-
         left, right = self.set_and_get(0, 5, 0, 0) #don't control when far from a wall
         self.assertTrue(0 < left == right, "curve wrongly")
 
