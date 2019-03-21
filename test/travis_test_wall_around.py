@@ -25,7 +25,7 @@ class WallAround(unittest.TestCase):
         self.assertTrue(left < right, "don't curve to left")
 
         left, right = self.set_and_get(0, 10, 0, 0) #curve to left
-        self.assertTrue(left > right, "don't curve to left")
+        self.assertTrue(left < right, "don't curve to left")
 
         left, right = self.set_and_get(0, 200, 0, 0) #curve to right
         self.assertTrue(left > right, "don't curve to right")
